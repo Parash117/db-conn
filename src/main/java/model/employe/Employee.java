@@ -15,6 +15,12 @@ public class Employee {
 
     private List<Account> accounts;
 
+    public Employee(Integer id, String name, Timestamp hireDate) {
+        this.id = id;
+        this.name = name;
+        this.hireDate = hireDate;
+    }
+
     public Employee(Integer id, String name, Timestamp hireDate, List<Account> accounts) {
         this.id = id;
         this.name = name;
