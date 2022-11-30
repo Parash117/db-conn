@@ -1,4 +1,6 @@
 import config.DBConnection;
+import enums.AccountType;
+import model.account.Account;
 import model.employe.Employee;
 import model.student.Students;
 import service.student.StudentService;
@@ -8,9 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -47,7 +47,7 @@ public class Main {
 //        studentService.updateStudent(studentTobeUpdated);
 //        studentService.deleteStudentById(1L);
 
-        List<String> stringList = new ArrayList<String>();
+        /*List<String> stringList = new ArrayList<String>();
         stringList.add("A");
         stringList.add("b");
         stringList.add("c");
@@ -101,7 +101,43 @@ public class Main {
                 .map( employee -> employee.getName())
                 .collect(Collectors.toList());
 
-        System.out.println();
+        System.out.println();*/
+
+        /*Integer a = 128;
+        Integer b = 128;
+
+        if(a.equals(b)){
+            System.out.println("a equals to b");
+        }else {
+            System.out.println("a not equals to b");
+        }*/
+
+        /*Account account = new Account(20, AccountType.CHECKING_ACCOUNT, 104);
+        Account account2 = new Account(20, AccountType.CHECKING_ACCOUNT, 104);
+
+
+        if(account.equals(account2)){
+            System.out.println("account equals to account2");
+        }else {
+            System.out.println("account not equals to account2");
+        }
+
+        Set<Account> accountSet = new HashSet<>();
+        accountSet.add(account);
+        accountSet.add(account2);
+
+
+        System.out.println();*/
+
+        String str = "APPLE";
+        String str2 = new String("APPLE");
+        String str3 = "APPLE";
+
+        if(str == (str2)){
+            System.out.println("account equals to account2");
+        }else {
+            System.out.println("account not equals to account2");
+        }
 
     }
 
