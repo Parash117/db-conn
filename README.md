@@ -23,4 +23,4 @@ CREATE TABLE IF NOT EXISTS account
     REFERENCES employee(id)
 );
 
--- This is test comment
+-- This is test comment. This is another test commit - from student 1 of Sunway college
