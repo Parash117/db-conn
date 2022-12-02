@@ -22,3 +22,5 @@ CREATE TABLE IF NOT EXISTS account
     CONSTRAINT fk_account_employee FOREIGN KEY (employee_id)
     REFERENCES employee(id)
 );
+
+-- This is test comment
