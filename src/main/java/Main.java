@@ -159,12 +159,20 @@ public class Main {
 
         EmployeeServiceImpl obj=  new EmployeeServiceImpl();
 //        Employee employee3=new Employee(3  ,"Nabin Dahal" ,timestamp);
-//        Employee employee4=new Employee(4,"Prabin Adhikari",timestamp);
+//        Employee employee5=new Employee(4,"Prabin Adhikari",timestamp);
+//        obj.createEmployee(employee5);
 //
 
-        obj.createNewChecking(1000.0, 4);
-        obj.createNewSavings(10000.0,4);
-        obj.createNewRetirement(100000.0,4);
+//        obj.createNewChecking(1000.0, 5);
+//        obj.createNewSavings(10000.0,5);
+//        obj.createNewRetirement(100000.0,5);
+
+        obj.deposit(AccountType.SAVING_ACCOUNT,50000.0,5);
+
+
+
+
+
 
 
 

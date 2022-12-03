@@ -1,5 +1,6 @@
 package service.employee;
 
+import enums.AccountType;
 import model.employe.Employee;
 
 
@@ -12,6 +13,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static java.lang.String.valueOf;
 
 //TODO: implement EmployeeService
 public class EmployeeServiceImpl {
@@ -54,7 +57,7 @@ public class EmployeeServiceImpl {
         try{
             PreparedStatement sqlQuery=connection.prepareStatement("INSERT INTO account"+"(balance,account_type,employee_id)VALUES(?,?,?)");
             sqlQuery.setDouble(1,startAmount);
-            sqlQuery.setString(2,"SAVINGS_ACCOUNT");
+            sqlQuery.setString(2,"SAVING_ACCOUNT");
             sqlQuery.setInt(3,employeeId);
             int count=sqlQuery.executeUpdate();
             System.out.println(1 + "Savings account is inserted in table");
@@ -77,6 +80,35 @@ public class EmployeeServiceImpl {
         catch(SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public void deposit(AccountType acctType, double amt, Integer employeeId){
+
+        try{
+            PreparedStatement getSqlQuery= connection.prepareStatement("SELECT * FROM account WHERE employee_id= ? and account_type= ?");
+            getSqlQuery.setInt(1,employeeId);
+            getSqlQuery.setString(2,valueOf(acctType));
+
+
+            ResultSet resultSet=getSqlQuery.executeQuery();
+
+            if(!resultSet.next()) {
+                throw new RuntimeException("No record of the given id");
+            }
+
+            PreparedStatement updateSqlQuery=connection.prepareStatement("UPDATE account"+ "set balance= ? ");
+            updateSqlQuery.setDouble(1,amt);
+            System.out.println(amt +" is deposited in "+ acctType );
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();;
+        }
+    }
+
+    boolean withdraw(AccountType acctType, double amt, Integer employeeId){
+
+
     }
 
 
