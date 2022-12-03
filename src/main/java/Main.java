@@ -150,15 +150,24 @@ public class Main {
 
         //Getting the current time stamp.
 
-//        final Timestamp timestamp =
-//                new Timestamp(System.currentTimeMillis());
+        final Timestamp timestamp =
+                new Timestamp(System.currentTimeMillis());
 //
 //        Employee employee1=new Employee(1,"Rupesh Sunuwar" , timestamp);
 
+
+
         EmployeeServiceImpl obj=  new EmployeeServiceImpl();
+//        Employee employee3=new Employee(3  ,"Nabin Dahal" ,timestamp);
+//        Employee employee4=new Employee(4,"Prabin Adhikari",timestamp);
+//
+
+        obj.createNewChecking(1000.0, 4);
+        obj.createNewSavings(10000.0,4);
+        obj.createNewRetirement(100000.0,4);
 
 
-        obj.createNewChecking(1000.0, 1);
+
 
 
 
