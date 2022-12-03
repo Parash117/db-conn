@@ -150,13 +150,16 @@ public class Main {
 
         //Getting the current time stamp.
 
-        final Timestamp timestamp =
-                Timestamp.valueOf(LocalDateTime.of(LocalDate.of(2018, 10, 7), LocalTime.of(8, 45, 0)));
-
-        Employee employee1=new Employee(1,"Rupesh Sunuwar" , timestamp);
+//        final Timestamp timestamp =
+//                new Timestamp(System.currentTimeMillis());
+//
+//        Employee employee1=new Employee(1,"Rupesh Sunuwar" , timestamp);
 
         EmployeeServiceImpl obj=  new EmployeeServiceImpl();
-        obj.createEmployee(employee1);
+
+
+        obj.createNewChecking(1000.0, 1);
+
 
 
 

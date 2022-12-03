@@ -36,6 +36,20 @@ public class EmployeeServiceImpl {
 
     }
 
+    public void createNewChecking(Double startAmount, Integer employeeId){
+        try{
+            PreparedStatement sqlQuery=connection.prepareStatement("INSERT INTO account"+ "(balance,account_type,employee_id)VALUES (?,?,?)");
+            sqlQuery.setDouble(1,startAmount);
+            sqlQuery.setString(2,"CHECKING_ACCOUNT");
+            sqlQuery.setInt(3,employeeId);
+            int count=sqlQuery.executeUpdate();
+            System.out.println(count +"checking account is inserted in table");
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 
