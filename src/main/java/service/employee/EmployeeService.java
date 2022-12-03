@@ -5,7 +5,7 @@ import model.employe.Employee;
 
 public interface EmployeeService {
 
-    Employee createEmployee(Employee employee);
+    int createEmployee(Employee employee);
 
     void createNewChecking(Double startAmount, Integer employeeId);
 
