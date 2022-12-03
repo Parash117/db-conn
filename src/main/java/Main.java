@@ -128,16 +128,7 @@ public class Main {
 
 
         System.out.println();*/
-
-        String str = "APPLE";
-        String str2 = new String("APPLE");
-        String str3 = "APPLE";
-
-        if(str == (str2)){
-            System.out.println("account equals to account2");
-        }else {
-            System.out.println("account not equals to account2");
-        }
+        DBConnection.connect();
 
     }
 
