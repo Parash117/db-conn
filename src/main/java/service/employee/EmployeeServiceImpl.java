@@ -25,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService{
             sqlQuery.setString(2, employee.getName());
             sqlQuery.setTimestamp(3, employee.getHireDate());
             int count = sqlQuery.executeUpdate();
-            System.out.println(count + " number of data inserted");
+            System.out.println(count + " number of data inserted into employee table");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

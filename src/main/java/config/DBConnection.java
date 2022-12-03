@@ -13,7 +13,7 @@ public class DBConnection {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(Constants.url, Constants.username, Constants.password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Connected to the MySQL server successfully.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

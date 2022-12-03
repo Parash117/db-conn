@@ -25,7 +25,7 @@ public class StudentServiceImpl implements StudentService{
             sqlQuery.setString(3, students.getRollNumber());
             sqlQuery.setString(4, students.getGrade());
             int count = sqlQuery.executeUpdate();
-            System.out.println(count + " number of data inserted");
+            System.out.println(count + " number of data inserted into student table.");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
