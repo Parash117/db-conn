@@ -3,6 +3,8 @@ import enums.AccountType;
 import model.account.Account;
 import model.employe.Employee;
 import model.student.Students;
+import service.employee.EmployeeService;
+import service.employee.EmployeeServiceImpl;
 import service.student.StudentService;
 import service.student.StudentServiceImpl;
 
@@ -10,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -139,16 +142,23 @@ public class Main {
 //            System.out.println("account not equals to account2");
 //        }
 
-        DBConnection.connect();
-        StudentService s = new StudentServiceImpl();
+//        DBConnection.connect();
+//        StudentService s = new StudentServiceImpl();
+//
+//        Students st = new Students();
+//        st.setId(1L);
+//        st.setName("don donis me");
+//        st.setGrade("third");
+//        st.setRollNumber("21");
 
-        Students st = new Students();
-        st.setId(2L);
-        st.setName("don donis me");
-        st.setGrade("third");
-        st.setRollNumber("21");
+//        s.createStudent(st);
 
-        s.createStudent(st);
+        EmployeeService e = new EmployeeServiceImpl();
+        Timestamp instant= Timestamp.from(Instant.now());
+        Employee em = new Employee(2,"hero",instant);
+
+        e.createEmployee(em);
+
 
     }
 
