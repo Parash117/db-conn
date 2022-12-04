@@ -3,6 +3,8 @@ import enums.AccountType;
 import model.account.Account;
 import model.employe.Employee;
 import model.student.Students;
+import service.employee.EmployeeService;
+import service.employee.EmployeeServiceImpl;
 import service.student.StudentService;
 import service.student.StudentServiceImpl;
 
@@ -13,7 +15,7 @@ import java.sql.Timestamp;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Main{
 
     public static void main(String[] args) {
 
@@ -127,7 +129,7 @@ public class Main {
         accountSet.add(account2);
 
 
-        System.out.println();*/
+        System.out.println();
 
         String str = "APPLE";
         String str2 = new String("APPLE");
@@ -141,4 +143,9 @@ public class Main {
 
     }
 
+         */
+    EmployeeService employeeService = new EmployeeServiceImpl();
+        Employee employee = new Employee(1,"hello",new Timestamp(2022/12/3));
+        employeeService.createEmployee(employee);
+    }
 }
