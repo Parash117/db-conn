@@ -144,8 +144,9 @@ public class Main{
     }
 
          */
+    final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
     EmployeeService employeeService = new EmployeeServiceImpl();
-        Employee employee = new Employee(1,"hello",new Timestamp(2022/12/3));
+        Employee employee = new Employee(1,"hello",dateTime);
         employeeService.createEmployee(employee);
     }
 }
