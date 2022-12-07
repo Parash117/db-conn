@@ -8,8 +8,5 @@ public interface Shape {
 
     float getPeremeter();
 
-    default void someMethod(){
-        System.out.println("");
-    }
 
 }

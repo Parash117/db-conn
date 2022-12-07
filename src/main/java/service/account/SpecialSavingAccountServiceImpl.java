@@ -1,13 +1,14 @@
 package service.account;
 
 import enums.AccountType;
+import model.account.Account;
 
-public class SpecialSavingAccountServiceImpl implements AccountService{
+public class SpecialSavingAccountServiceImpl implements AccountService {
 
 
     @Override
-    public void createAccountByType(AccountType accountType, Double startAmount, Integer employeeId) {
-
+    public Account createAccountByType(AccountType accountType, Double startAmount, Integer employeeId) {
+        return null;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class SpecialSavingAccountServiceImpl implements AccountService{
         return null;
     }
 
-    private double addBonusOnEveryDeposit(double amt){
-        return 0.05D*amt;
+    private double addBonusOnEveryDeposit(double amt) {
+        return 0.05D * amt;
     }
 }

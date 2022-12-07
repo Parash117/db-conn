@@ -1,11 +1,12 @@
 package service.account;
 
 import enums.AccountType;
+import model.account.Account;
 import model.employe.Employee;
 
 public interface AccountService {
 
-    void createAccountByType(AccountType accountType, Double startAmount, Integer employeeId);
+    Account createAccountByType(AccountType accountType, Double startAmount, Integer employeeId);
 
     void deposit(AccountType acctType, double amt, Integer employeeId);
 

@@ -1,6 +1,7 @@
 package service.employee;
 
 import enums.AccountType;
+import model.account.Account;
 import model.employe.Employee;
 
 public interface EmployeeService {
@@ -9,7 +10,7 @@ public interface EmployeeService {
 
     void createNewChecking(Double startAmount, Integer employeeId);
 
-    void createNewSavings(double startAmount, Integer employeeId);
+    Account createNewSavings(double startAmount, Integer employeeId);
 
     void createNewRetirement(double startAmount, Integer employeeId);
 

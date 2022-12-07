@@ -148,12 +148,13 @@ public class Main{
 
          */
         final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
-        Connection dbConnection = DBConnection.connect();
         AccountService accountService = new AccountServiceImpl();
-        AccountService specialAccountService = new SpecialSavingAccountServiceImpl();
         EmployeeService employeeService = new EmployeeServiceImpl(accountService);
 
         Employee employee = new Employee(1, "hello", dateTime);
         employeeService.createEmployee(employee);
+        Account account = employeeService.createNewSavings(10000f, employee.getId());
+
+        employeeService.deposit(AccountType.SAVING_ACCOUNT, 150f, employee.getId());
     }
 }

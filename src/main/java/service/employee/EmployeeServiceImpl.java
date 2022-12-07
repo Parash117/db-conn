@@ -5,13 +5,11 @@ import enums.AccountType;
 import model.account.Account;
 import model.employe.Employee;
 import service.account.AccountService;
-import service.account.AccountServiceImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 //TODO: implement EmployeeService
 public class EmployeeServiceImpl implements EmployeeService{
@@ -27,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
         try {
             PreparedStatement sqlQuery = connection.prepareStatement("INSERT INTO employee" +
-                    "(id, employee_name, hireDate)VALUES ( ? , ? , ? ) ");
+                    "(id, employee_name, hire_date)VALUES ( ? , ? , ? ) ");
             sqlQuery.setLong(1, employee.getId());
             sqlQuery.setString(2, employee.getName());
             sqlQuery.setTimestamp(3, employee.getHireDate());
@@ -38,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService{
             throwable.printStackTrace();
         }
 
-        return null;
+        return employee;
     }
 
     public void createNewChecking(Double startAmount, Integer employeeId) {
@@ -46,8 +44,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     }
 
-    public void createNewSavings(double startAmount, Integer employeeId) {
-        accountService.createAccountByType(AccountType.SAVING_ACCOUNT,startAmount,employeeId);
+    public Account createNewSavings(double startAmount, Integer employeeId) {
+        return accountService.createAccountByType(AccountType.SAVING_ACCOUNT,startAmount,employeeId);
     }
 
     public void createNewRetirement(double startAmount, Integer employeeId) {
