@@ -16,8 +16,13 @@ import java.util.List;
 //TODO: implement EmployeeService
 public class EmployeeServiceImpl implements EmployeeService{
 
-    AccountService accountService = (AccountService) new AccountServiceImpl();
-    Connection connection = DBConnection.connect();
+    private final AccountService accountService ;//= (AccountService) new AccountServiceImpl();
+    private final Connection connection = DBConnection.connect();
+
+    public EmployeeServiceImpl(AccountService accountService) {
+        this.accountService = accountService;
+    }
+
     public Employee createEmployee(Employee employee) {
 
         try {

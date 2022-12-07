@@ -3,6 +3,9 @@ import enums.AccountType;
 import model.account.Account;
 import model.employe.Employee;
 import model.student.Students;
+import service.account.AccountService;
+import service.account.AccountServiceImpl;
+import service.account.SpecialSavingAccountServiceImpl;
 import service.employee.EmployeeService;
 import service.employee.EmployeeServiceImpl;
 import service.student.StudentService;
@@ -144,10 +147,13 @@ public class Main{
     }
 
          */
-    final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
-    EmployeeService employeeService = new EmployeeServiceImpl();
-        Employee employee = new Employee(1,"Bishal",dateTime);
+        final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
+        Connection dbConnection = DBConnection.connect();
+        AccountService accountService = new AccountServiceImpl();
+        AccountService specialAccountService = new SpecialSavingAccountServiceImpl();
+        EmployeeService employeeService = new EmployeeServiceImpl(accountService);
+
+        Employee employee = new Employee(1, "hello", dateTime);
         employeeService.createEmployee(employee);
     }
-
 }
