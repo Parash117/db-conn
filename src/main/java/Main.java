@@ -3,6 +3,9 @@ import enums.AccountType;
 import model.account.Account;
 import model.employe.Employee;
 import model.student.Students;
+import service.account.AccountService;
+import service.account.AccountServiceImpl;
+import service.account.SpecialSavingAccountServiceImpl;
 import service.employee.EmployeeService;
 import service.employee.EmployeeServiceImpl;
 import service.student.StudentService;
@@ -15,7 +18,7 @@ import java.sql.Timestamp;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main{
+public class Main {
 
     public static void main(String[] args) {
 
@@ -144,9 +147,13 @@ public class Main{
     }
 
          */
-    final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
-    EmployeeService employeeService = new EmployeeServiceImpl();
-        Employee employee = new Employee(1,"hello",dateTime);
+        final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
+        Connection dbConnection = DBConnection.connect();
+        AccountService accountService = new AccountServiceImpl();
+        AccountService specialAccountService = new SpecialSavingAccountServiceImpl();
+        EmployeeService employeeService = new EmployeeServiceImpl(accountService);
+
+        Employee employee = new Employee(1, "hello", dateTime);
         employeeService.createEmployee(employee);
     }
 }
