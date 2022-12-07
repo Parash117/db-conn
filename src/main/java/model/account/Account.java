@@ -3,6 +3,9 @@ package model.account;
 import enums.AccountType;
 import model.employe.Employee;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Account {
 
     private Integer accountId;
@@ -25,10 +28,22 @@ public class Account {
         this.balance = balance;
     }
 
+    public Account(){
+
+    }
+
     public Account(Integer accountId, AccountType accountType, Integer employeeId) {
         this.accountId = accountId;
         this.accountType = accountType;
         this.employeeId = employeeId;
+    }
+    public Account resultSetToDto(ResultSet resultSet) throws SQLException {
+        Account account= new Account();
+        account.setBalance(resultSet.getDouble("balance"));
+        account.setAccountId(resultSet.getInt("account_id"));
+        account.setAccountType(AccountType.valueOf(resultSet.getString("account_type")));
+        return account;
+
     }
 
     public Integer getAccountId() {

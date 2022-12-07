@@ -1,7 +1,10 @@
 package model.employe;
 
 import model.account.Account;
+import model.student.Students;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -15,6 +18,10 @@ public class Employee {
 
     private List<Account> accounts;
 
+    public Employee(){
+
+    }
+
     public Employee(Integer id, String name, Timestamp hireDate) {
         this.id = id;
         this.name = name;
@@ -27,6 +34,8 @@ public class Employee {
         this.hireDate = hireDate;
         this.accounts = accounts;
     }
+
+
 
     public Integer getId() {
         return id;

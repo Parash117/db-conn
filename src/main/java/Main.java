@@ -20,6 +20,7 @@ import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.lang.String.valueOf;
 
 
 public class Main {
@@ -157,17 +158,24 @@ public class Main {
 
 
 
-        EmployeeServiceImpl obj=  new EmployeeServiceImpl();
-//        Employee employee3=new Employee(3  ,"Nabin Dahal" ,timestamp);
-//        Employee employee5=new Employee(4,"Prabin Adhikari",timestamp);
+        EmployeeService obj=  new EmployeeServiceImpl();
+//        Employee employee3=new Employee(6  ,"Nabin Dahal" ,timestamp);
+//        Employee employee5=new Employee(7,"Prabin Adhikari",timestamp);
 //        obj.createEmployee(employee5);
-//
+//        obj.createEmployee(employee3);
 
-//        obj.createNewChecking(1000.0, 5);
-//        obj.createNewSavings(10000.0,5);
-//        obj.createNewRetirement(100000.0,5);
 
-        obj.deposit(AccountType.SAVING_ACCOUNT,50000.0,5);
+//        obj.createNewChecking(1000.0, 6);
+//        obj.createNewSavings(10000.0,6);
+//        obj.createNewRetirement(100000.0,6);
+
+
+       obj.getFormattedAcctInfo(6);
+
+
+
+
+
 
 
 

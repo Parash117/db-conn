@@ -1,11 +1,14 @@
 package service.employee;
 
 import enums.AccountType;
+import model.account.Account;
 import model.employe.Employee;
+
+import java.util.List;
 
 public interface EmployeeService {
 
-    Employee createEmployee(Employee employee);
+    int createEmployee(Employee employee);
 
     void createNewChecking(Double startAmount, Integer employeeId);
 
@@ -17,6 +20,6 @@ public interface EmployeeService {
 
     boolean withdraw(AccountType acctType, double amt, Integer employeeId);
 
-    String getFormattedAcctInfo(Integer employeeId);
+    List<Account> getFormattedAcctInfo(Integer employeeId);
 
 }
