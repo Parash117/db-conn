@@ -146,7 +146,8 @@ public class Main{
          */
     final Timestamp dateTime = new Timestamp(System.currentTimeMillis());
     EmployeeService employeeService = new EmployeeServiceImpl();
-        Employee employee = new Employee(1,"hello",dateTime);
+        Employee employee = new Employee(1,"Bishal",dateTime);
         employeeService.createEmployee(employee);
     }
+
 }
