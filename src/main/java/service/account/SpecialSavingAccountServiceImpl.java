@@ -2,8 +2,9 @@ package service.account;
 
 import enums.AccountType;
 
-//TODO: implement AccountService here
-public class AccountServiceImpl implements AccountService {
+public class SpecialSavingAccountServiceImpl implements AccountService{
+
+
     @Override
     public void createAccountByType(AccountType accountType, Double startAmount, Integer employeeId) {
 
@@ -11,6 +12,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void deposit(AccountType acctType, double amt, Integer employeeId) {
+        amt = addBonusOnEveryDeposit(amt);
 
     }
 
@@ -22,5 +24,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public String getFormattedAcctInfo(Integer employeeId) {
         return null;
+    }
+
+    private double addBonusOnEveryDeposit(double amt){
+        return 0.05D*amt;
     }
 }
