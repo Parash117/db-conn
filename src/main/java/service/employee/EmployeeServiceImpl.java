@@ -62,4 +62,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         return null;
     }
 
+    public void don(){
+        System.out.println("hero");
+    }
+
 }
